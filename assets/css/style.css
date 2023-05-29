@@ -1,4 +1,4 @@
-*{
+* {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -6,93 +6,125 @@
     padding-block-start: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
+    overflow-y: hidden; 
 }
 
-:root{
+:root {
     --text-color: white;
-    --size-header: 154px;
+    --size-header: 90px;
 }
 
-.main-web{
+.main-web {
     background-color: rgb(241, 216, 190);
+    height: fit-content;
 }
 
 /* Header section */
-#header{
+.header {
     width: 100%;
     height: var(--size-header);
     position: fixed;
     z-index: 10;
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
-    padding: 0 5%;
+    padding: 20px 5%;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: none;
 }
-#header .header-block{
+
+.header .header-block {
     position: relative;
 }
 
-#header .header-title h1{
+.header .header-title h1 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
     font-variant: small-caps;
     font-size: 3rem;
 }
-#header .header-title span{
+
+.header.frame1 .header-title span {
     color: blue;
 }
-#header .header-nav{
+.header.frame2 .header-title span {
+    color: yellow;
+}
+
+.header .header-nav {
     width: 45%;
     height: 100%;
-    @media (max-width: 1200px) {
-        display : none;
+    min-height: 65px;
+    @media (max-width: 1350px) {
+        display: none;
     }
 }
-#header .header-nav .nav-list{
+
+.header .header-nav .nav-list {
     position: absolute;
     width: 100%;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
 }
-#header .header-nav .nav-list > li{
-    display: inline-block;
 
+.header .header-nav .nav-list>li {
+    display: inline-block;
     text-align: center;
     line-height: 60px;
     width: 30%;
     height: 60px;
     font-size: 1.5rem;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-variant: small-caps;
     font-weight: 500;
 }
-#header .header-nav li:hover{
+.header .header-nav .nav-list a{
+    font-size: 1.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-variant: small-caps;
+    font-weight: 500;
+    text-align: none;
+}
+.header .header-nav li:hover i,
+.header .header-nav li:hover a,
+.header .header-nav li:hover {
     transform: translateY(5px);
     transform: translateX(5px);
     background-color: aliceblue;
     color: black;
     border-radius: 2rem;
 }
+.header .header-nav li a{
+    text-decoration: none;
+}
+
+.header .header-nav .nav-list i {
+    padding-right: 5px;
+}
 
 
 /* Home section */
-#home{
+.home {
     position: relative;
-    height: fit-content;
+    width: 100%;
+    height: 100vh;
+    display: none;
 }
-.home-background{
+
+.home .home-background {
     width: 100%;
     height: 100vh;
     object-fit: cover;
     object-position: center;
     display: grid;
-    grid-template-columns: repeat(1,1fr);
+    grid-template-columns: repeat(1, 1fr);
     align-items: center;
     position: absolute;
     z-index: 1;
 }
-#home .home-content{
+
+.home .home-content {
     position: absolute;
     z-index: 2;
     padding: 0 40px;
@@ -100,20 +132,86 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+    margin-top: 5%;
 }
 
-#home .home-block{
+.home .home-block {
     width: 50%;
-    height: 40px;
+    height: fit-content;
+    min-width: none;
 }
-#home .home-content .home-avarta img{
-    width: 400px;
-    height: 400px;
-    object-fit: contain;
-    border-radius: 60%;
+
+.home .home-content .home-avarta img {
+    width: 50%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 50%;
     margin-left: 50%;
     transform: translateX(-50%);
-    margin-top: 40px;
+}
+.home .home-content .home-avarta p{
+    margin-top: 30px;
+    width: fit-content;
+    max-width: 300px;
+    height: 65px;
+    text-align: center;
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
 
+.home-content  .home-text .text-header{
+    width: 95%;
+    /* transform: translateX(-10%); */
+    padding: 0 0 30px 0;
+    text-align: center;
+}
+.home-content  .home-text .text-script{
+    width: 95%;
+    border: 1px solid blue;
+    padding: 30px 80px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.2);
+    /* transform: translateX(-10%); */
+}
+.home-content  .home-text .text-script p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.0rem;
+    text-align:justify;
+    text-indent: 30px;
+}
+
+/* transform button */
+.home .transframes {
+    width: fit-content;
+    height: 30px;
+    position: absolute;
+    z-index: 2;
+    margin-top: 100px;
+    right: 10px;
+    display: flex;
+    cursor: pointer;
+}
+.home .transframes p{
+    line-height: 30px;
+    margin: 0 40px 0 10px;
+}
+.home .transframes .transframesBtn{
+    height: 20px;
+    width: 20px;
+    transform: translateY(-50%);
+    margin-top: 50%;
+    border-radius: 50%;
+    background-color: aliceblue;
+}
+
+.home .transframes:hover{
+   transform: translateY(-3px) translateX(3px);
+}
+
+.home.openframe{
+    display: block;
+}
+.header.openframe{
+    display: flex;
+}
 

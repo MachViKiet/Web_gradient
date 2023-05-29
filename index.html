@@ -7,40 +7,151 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gradient-web</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/content.css">
+    <link rel="stylesheet" href="./assets/css/contact.css">
+    <link rel="stylesheet" href="./assets/icon/icon/themify-icons-font/themify-icons/themify-icons.css">
 </head>
 
 <body>
     <div class="main-web">
+        <!-- ----------- Frame 1 ------------ -->
         <!-- Header section -->
-        <div id="header">
+        <div class="header frame1 openframe">
             <div class="header-block header-title">
                 <h1> <span> Being </span> passionate crazy ?</h1>
             </div>
             <div class="header-block header-nav">
                 <div class="nav-list">
-                    <li>Home</li>
-                    <li>My project</li>
-                    <li>Contact</li>
+                    <li><a href="#home"><i class="ti-home"></i> Home</a></li>
+                    <li><a href="#project"><i class="ti-gallery"></i> My project</a></li>
+                    <li><a href="#contact"><i class="ti-themify-favicon"></i> Contact</a></li>
                 </div>
             </div>
         </div>
         <!-- Home section -->
-        <div id="home">
+        <div class="home frame1 openframe" id="home">
             <img class="home-background" src="./assets/img/background1.jpg" alt="Home-background">
+            <!-- button -->
+            <div class="transframes js-transframes">
+                <p><i class="ti-hand-point-right"> </i> Press to change Frame in background </p>
+                <!-- <div class="transframesBtn"></div> -->
+            </div>
             <div class="home-content">
                 <div class="home-block home-avarta">
                     <img src="./assets/img/Chibi_avatar.png" alt="avarta">
+                    <p style="color:rgb(68, 0, 255)">Without passion, there is no genius. <br>
+                        <i style="color:rgb(68, 0, 255)">~ Theodor Mommsen ~</i>
+                    </p>
                 </div>
                 <div class="home-block home-text">
-                    <h1>This is content in home </h1>
+                    <h1 class="text-header">
+                        When passion meets madness ? <br>
+                        <span style="color: yellow">
+                            Boom <i class="ti-bolt"></i>
+                            Boom <i class="ti-bolt"></i>
+                            Boom <i class="ti-bolt"></i>
+                        </span>
+                    </h1>
+                    <div class="text-script">
+                        <p>Welcome to our website dedicated to "Being Passionate Crazy"! We
+                            believe that passion and a touch of madness are the driving forces behind a remarkable life.
+                        </p>
+                        <p>Through inspiring stories and
+                            personal experiences, we aim to ignite your inner fire and empower you to fearlessly pursue
+                            your
+                            dreams. Join us on this exhilarating journey as we celebrate the spirit of being passionate
+                            crazy and unlock your true potential. Get ready to embrace a life that defies convention and
+                            leaves an indelible mark on the world!</p>
+                    </div>
                 </div>
-
             </div>
-            <!------------------>
+        </div>
+        <!-- ----------- Frame 2 ------------ -->
+        <!-- Header section -->
+        <div class="header frame2">
+            <div class="header-block header-title">
+                <h1> <span> Being </span> passionate crazy ?</h1>
+            </div>
+            <div class="header-block header-nav">
+                <div class="nav-list">
+                    <li><a href="#home2"><i class="ti-home"></i> Home</a></li>
+                    <li><a href="#project"><i class="ti-gallery"></i> My project</a></li>
+                    <li><a href="#contact"><i class="ti-themify-favicon"></i> Contact</a></li>
+                </div>
+            </div>
+        </div>
+        <!-- Home section -->
+        <div class="home frame2" id="home2">
+            <img class="home-background" src="./assets/img/background2.webp" alt="Home-background">
+            <!-- button -->
+            <div class="transframes js-transframes">
+                <p><i class="ti-hand-point-right"> </i> Press to change Frame in background </p>
+                <!-- <div class="transframesBtn"></div> -->
+            </div>
+            <div class="home-content">
+                <div class="home-block home-avarta">
+                    <img src="./assets/img/chibi-avartar2.jpg" alt="avartar">
+                    <p>Only passions, great passions can elevate the soul to great things <br> <i>~ Denis Diderot ~</i>
+                    </p>
+                </div>
+                <div class="home-block home-text">
+                    <h1 class="text-header">
+                        <i class="ti-thought" style="padding-right: 8px;"></i>
+                        Welcome to the world of <br> "Passionate Crazy"!
+                    </h1>
+                    <div class="text-script">
+                        <p> Unleash Your Inner Fire and Embrace the Madness! Are you ready to break free from the
+                            ordinary and embark on an extraordinary journey? Our
+                            website celebrates the power of passion and the beauty of embracing your inner madness. <br>
+                        </p>
+                        <p>Discover the extraordinary stories of individuals who dared to defy conventions and pursued
+                            their wildest dreams. From artists to entrepreneurs, adventurers to change-makers, we bring
+                            you
+                            their inspiring tales of passion-fueled madness that have transformed their lives and left
+                            an
+                            indelible mark on the world
 
-            <!-- <img class="home-background" src="./assets/img/background2.webp" alt="Home-background"> -->
+                            Join our vibrant community of passionate souls who are driven by an insatiable thirst for
+                            life.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content" id="project">
+            <h1>Area to show my project</h1>
+        </div>
+        <div class="contact" id="contact">
+           <h1> Area to show my Contact</h1>
         </div>
     </div>
+
+    <script>
+        const changeFramesBtns = document.querySelectorAll(".transframes")
+        const Frames_Home = document.querySelectorAll('.home')
+        const Frames_Header = document.querySelectorAll('.header')
+        function changeFrameFunc() {
+            for (const Frame_Home of Frames_Home) {
+                if (Frame_Home.className.indexOf("openframe") == -1) {
+                    Frame_Home.className += " openframe";
+                } else {
+                    Frame_Home.className = Frame_Home.className.replace(" openframe", "");
+                }
+            }
+            for (const Frame_Header of Frames_Header) {
+                if (Frame_Header.className.indexOf("openframe") == -1) {
+                    Frame_Header.className += " openframe";
+                } else {
+                    Frame_Header.className = Frame_Header.className.replace(" openframe", "");
+                }
+            }
+        }
+        for (const changeFramesBtn of changeFramesBtns)
+            changeFramesBtn.addEventListener('click', changeFrameFunc);
+
+
+    </script>
+
 </body>
 
 </html>

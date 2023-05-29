@@ -1,0 +1,11 @@
+.content{
+    width: 100%;
+    height: 100vh;
+    background-color:aliceblue;
+    position: relative;
+}
+.content h1{
+    color: black;
+    position: absolute;
+    top: var(--size-header);
+}

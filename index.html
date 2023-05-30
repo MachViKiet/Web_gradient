@@ -27,6 +27,17 @@
                     <li><a href="#contact"><i class="ti-themify-favicon"></i> Contact</a></li>
                 </div>
             </div>
+            <div class="header-block header-nav-icon js-menuHeader-btn">
+                <!-- <p>Menu</p> -->
+                <div class="icon-menu"><i class="ti-menu"></i></div>
+            </div>
+            <div class="header-block header-nav2 js-nav2">
+                <div class="nav-list">
+                    <li><a href="#home"><i class="ti-home"></i> Home</a></li>
+                    <li><a href="#project"><i class="ti-gallery"></i> My project</a></li>
+                    <li class="end-nav"><a href="#contact"><i class="ti-themify-favicon"></i> Contact</a></li>
+                </div>
+            </div>
         </div>
         <!-- Home section -->
         <div class="home frame1 openframe" id="home">
@@ -40,7 +51,7 @@
                 <div class="home-block home-avarta">
                     <img src="./assets/img/Chibi_avatar.png" alt="avarta">
                     <p style="color:rgb(68, 0, 255)">Without passion, there is no genius. <br>
-                        <i style="color:rgb(68, 0, 255)">~ Theodor Mommsen ~</i>
+                        <span style="color:rgb(68, 0, 255)">~ Theodor Mommsen ~</span>
                     </p>
                 </div>
                 <div class="home-block home-text">
@@ -77,6 +88,17 @@
                     <li><a href="#home2"><i class="ti-home"></i> Home</a></li>
                     <li><a href="#project"><i class="ti-gallery"></i> My project</a></li>
                     <li><a href="#contact"><i class="ti-themify-favicon"></i> Contact</a></li>
+                </div>
+            </div>
+            <div class="header-block header-nav-icon js-menuHeader-btn">
+                <!-- <p>Menu</p> -->
+                <div class="icon-menu"><i class="ti-menu"></i></div>
+            </div>
+            <div class="header-block header-nav2 js-nav2">
+                <div class="nav-list">
+                    <li><a href="#home2"><i class="ti-home"></i> Home</a></li>
+                    <li><a href="#project"><i class="ti-gallery"></i> My project</a></li>
+                    <li class="end-nav"><a href="#contact"><i class="ti-themify-favicon"></i> Contact</a></li>
                 </div>
             </div>
         </div>
@@ -122,7 +144,7 @@
             <h1>Area to show my project</h1>
         </div>
         <div class="contact" id="contact">
-           <h1> Area to show my Contact</h1>
+            <h1> Area to show my Contact</h1>
         </div>
     </div>
 
@@ -130,6 +152,21 @@
         const changeFramesBtns = document.querySelectorAll(".transframes")
         const Frames_Home = document.querySelectorAll('.home')
         const Frames_Header = document.querySelectorAll('.header')
+
+        const Nav2s = document.querySelectorAll(".js-nav2")
+        const Nav2_btns = document.querySelectorAll(".js-menuHeader-btn")
+
+
+        function ShowNav2() {
+            for (const Nav2 of Nav2s) {
+                if (Nav2.className.indexOf("shownav") == -1) {
+                    Nav2.className += " shownav";
+                } else {
+                    Nav2.className = Nav2.className.replace(" shownav", "");
+                }
+            }
+        }
+
         function changeFrameFunc() {
             for (const Frame_Home of Frames_Home) {
                 if (Frame_Home.className.indexOf("openframe") == -1) {
@@ -146,8 +183,14 @@
                 }
             }
         }
-        for (const changeFramesBtn of changeFramesBtns)
+
+        for (const changeFramesBtn of changeFramesBtns) {
             changeFramesBtn.addEventListener('click', changeFrameFunc);
+        }
+        for (const Nav2_btn of Nav2_btns) {
+            Nav2_btn.addEventListener('click', ShowNav2)
+        }
+
 
 
     </script>

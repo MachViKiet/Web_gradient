@@ -349,8 +349,8 @@
 }
 
 .home .home-content .home-avarta img {
-    width: 50%;
-    max-width: 225px;
+    width: 70%;
+    max-width: 400px;
     height: 100%;
     object-fit: fill;
     border-radius: 50%;

@@ -356,6 +356,9 @@
     border-radius: 50%;
     margin-left: 50%;
     transform: translateX(-50%);
+    @media (max-width: 1095px) {
+        max-width: 225px;
+    }
 }
 
 .home .home-content .home-avarta p {
